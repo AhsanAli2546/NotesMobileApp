@@ -1,0 +1,17 @@
+E:\Dot Net Practice\Mob\Notes\Notes\bin\Debug\netstandard2.0\Notes.deps.json
+E:\Dot Net Practice\Mob\Notes\Notes\bin\Debug\netstandard2.0\Notes.dll
+E:\Dot Net Practice\Mob\Notes\Notes\bin\Debug\netstandard2.0\ref\Notes.dll
+E:\Dot Net Practice\Mob\Notes\Notes\bin\Debug\netstandard2.0\Notes.pdb
+E:\Dot Net Practice\Mob\Notes\Notes\obj\Debug\netstandard2.0\Notes.GeneratedMSBuildEditorConfig.editorconfig
+E:\Dot Net Practice\Mob\Notes\Notes\obj\Debug\netstandard2.0\App.xaml.g.cs
+E:\Dot Net Practice\Mob\Notes\Notes\obj\Debug\netstandard2.0\Notes.AssemblyInfoInputs.cache
+E:\Dot Net Practice\Mob\Notes\Notes\obj\Debug\netstandard2.0\Notes.AssemblyInfo.cs
+E:\Dot Net Practice\Mob\Notes\Notes\obj\Debug\netstandard2.0\Notes.csproj.CoreCompileInputs.cache
+E:\Dot Net Practice\Mob\Notes\Notes\obj\Debug\netstandard2.0\XamlC.stamp
+E:\Dot Net Practice\Mob\Notes\Notes\obj\Debug\netstandard2.0\Notes.dll
+E:\Dot Net Practice\Mob\Notes\Notes\obj\Debug\netstandard2.0\ref\Notes.dll
+E:\Dot Net Practice\Mob\Notes\Notes\obj\Debug\netstandard2.0\Notes.pdb
+E:\Dot Net Practice\Mob\Notes\Notes\obj\Debug\netstandard2.0\View\MainPage.xaml.g.cs
+E:\Dot Net Practice\Mob\Notes\Notes\obj\Debug\netstandard2.0\View\AddNewNote.xaml.g.cs
+E:\Dot Net Practice\Mob\Notes\Notes\obj\Debug\netstandard2.0\View\PrioritySetter.xaml.g.cs
+E:\Dot Net Practice\Mob\Notes\Notes\obj\Debug\netstandard2.0\Notes.csproj.AssemblyReference.cache

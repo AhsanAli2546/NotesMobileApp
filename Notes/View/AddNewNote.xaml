@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Notes"
+             x:Class="Notes.View.AddNewNote">
+    <NavigationPage.TitleView>
+        <AbsoluteLayout >
+            <Label Text="Note" 
+                   AbsoluteLayout.LayoutFlags="PositionProportional" 
+                   AbsoluteLayout.LayoutBounds="0,0,60,40" 
+                   FontSize="Large" 
+                   TextColor="Black" 
+                   FontAttributes="Bold"/>
+            <ImageButton Source="{Binding SaveImageButton}" 
+                         Aspect="AspectFit" 
+                         AbsoluteLayout.LayoutFlags="PositionProportional" 
+                         AbsoluteLayout.LayoutBounds=".95,0,40,40" 
+                         BackgroundColor="Transparent"
+                         Command="{Binding SaveNoteCommand}"/>
+        </AbsoluteLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout Padding="10" BackgroundColor="White">
+                <Entry Placeholder="Input title" 
+                   Keyboard="Text" 
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   Text="{Binding tbTitle, Mode=TwoWay}"
+                   PlaceholderColor="LightGray"/>
+                <Label Text="{Binding lblDateTime, Mode=TwoWay}" 
+                   FontSize="Medium"/>
+                <Editor Text="{Binding editDetail, Mode=TwoWay}" 
+                        AutoSize="TextChanges" 
+                        Keyboard="Text"
+                        MinimumHeightRequest="50"/>
+            </StackLayout>
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>

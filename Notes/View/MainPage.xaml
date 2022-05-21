@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:local="clr-namespace:Notes"
+             x:Class="Notes.MainPage" >
+    
+    <NavigationPage.TitleView>
+        <AbsoluteLayout >
+            <Label Text="Notes" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0,0,60,40" FontSize="Large" TextColor="Black" FontAttributes="Bold"/>
+
+            <!-- <Button Text="Edit" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".82,0,70,40" FontSize="Medium" BackgroundColor="Transparent"/> -->
+            <!--<ImageButton Source="{local:ImageResource Notes.Images.search.png}" Aspect="AspectFit" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".95,.6,40,30" BackgroundColor="Transparent"/>-->
+        </AbsoluteLayout>
+    </NavigationPage.TitleView>
+
+
+
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="White">
+            <ListView x:Name="NoteList"
+                      CachingStrategy="RecycleElement"
+                      Margin="5" 
+                      SeparatorVisibility="None" 
+                      HasUnevenRows="True" 
+                      ItemsSource="{Binding Collection}"
+                      ItemTapped="NoteList_ItemTapped"
+                      IsPullToRefreshEnabled="True"
+                      IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                      RefreshCommand="{Binding RefreshCommand}">
+                      
+                <!--<ListView.Behaviors>
+                    <xct:EventToCommandBehavior
+        EventName="ItemSelected"
+        Command="{Binding MyCustomCommand}" />
+                </ListView.Behaviors>-->
+    
+    <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Set Priority" 
+                                          Command="{Binding Path=BindingContext.SetPriorityCommand ,Source={x:Reference Name=NoteList}}"
+                                          CommandParameter="{Binding .}"/>
+                                <MenuItem Text="Delete" 
+                                          IsDestructive="True" 
+                                          Command="{Binding Path=BindingContext.DeleteNoteCommand ,Source={x:Reference Name=NoteList}}" 
+                                          CommandParameter="{Binding .}"/>
+                                
+                            </ViewCell.ContextActions>
+                            <Frame BackgroundColor="#f7f7f7" CornerRadius="20" Margin="10" HasShadow="False">
+                                <StackLayout Orientation="Vertical">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="60"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Label Grid.Column="0" VerticalOptions="StartAndExpand" Text="{Binding Title}" FontSize="Title" TextColor="Black" FontAttributes="Bold"/>
+                                        <Label Grid.Column="0" VerticalOptions="EndAndExpand" Text="{Binding NoteDateTime, StringFormat='{0:dddd, dd MMMM yyyy}'}"/>
+
+                                        <!--
+                                            <Button Grid.Column="1" Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference myList}}" CommandParameter="{Binding .}" Padding="30,10" Text="Delete" HorizontalOptions="Start" BackgroundColor="Black" TextColor="White"/>
+                                            -->
+                                    </Grid>
+
+
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ImageButton Source="{local:ImageResource Notes.Images.newnote.png}" Aspect="AspectFit" BackgroundColor="White" HeightRequest="50" Command="{Binding AddNoteCommand}"/>
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+
+</ContentPage>
